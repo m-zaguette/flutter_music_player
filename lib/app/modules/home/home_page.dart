@@ -16,7 +16,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    var font = GoogleFonts.notoSans();
+    var songFont = GoogleFonts.notoSans(fontSize: 15);
+    var artistFont = GoogleFonts.notoSans(fontSize: 10);
     return Scaffold(
       appBar: AppBar(
         title: Text('Agetzzue Music'),
@@ -31,11 +32,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                   'https://i.pinimg.com/originals/35/53/4e/35534e860468af2f2c9a75c072290471.jpg'),
               title: Text(
                 'Ninguém sabe qual é essa música!',
-                style: font,
+                style: songFont,
               ),
               subtitle: Text(
                 'Ninguém sabe qual é a banda também!',
-                style: font,
+                style: artistFont,
               ),
               contentPadding: EdgeInsets.all(10));
         },
