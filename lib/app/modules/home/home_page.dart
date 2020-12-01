@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,12 +16,29 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    var font = GoogleFonts.notoSans();
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Agetzzue Music'),
+        backgroundColor: Colors.black,
       ),
-      body: Column(
-        children: <Widget>[],
+      backgroundColor: Colors.black,
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, int index) {
+          return ListTile(
+              leading: Image.network(
+                  'https://i.pinimg.com/originals/35/53/4e/35534e860468af2f2c9a75c072290471.jpg'),
+              title: Text(
+                'Ninguém sabe qual é essa música!',
+                style: font,
+              ),
+              subtitle: Text(
+                'Ninguém sabe qual é a banda também!',
+                style: font,
+              ),
+              contentPadding: EdgeInsets.all(10));
+        },
       ),
     );
   }
