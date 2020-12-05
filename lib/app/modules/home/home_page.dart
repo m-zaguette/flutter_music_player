@@ -28,6 +28,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         itemCount: 10,
         itemBuilder: (context, int index) {
           return ListTile(
+              onTap: () => Modular.to.pushNamed('/player',
+                  arguments:
+                      'https://i.pinimg.com/originals/35/53/4e/35534e860468af2f2c9a75c072290471.jpg'),
               leading: Image.network(
                   'https://i.pinimg.com/originals/35/53/4e/35534e860468af2f2c9a75c072290471.jpg'),
               title: Text(
