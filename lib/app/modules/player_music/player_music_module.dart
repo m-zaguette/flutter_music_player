@@ -12,7 +12,7 @@ class PlayerMusicModule extends ChildModule {
   @override
   List<ModularRouter> get routers => [
         ModularRouter(Modular.initialRoute,
-            child: (_, args) => PlayerMusicPage()),
+            child: (_, args) => PlayerMusicPage(url: args.data)),
       ];
 
   static Inject get to => Inject<PlayerMusicModule>.of();

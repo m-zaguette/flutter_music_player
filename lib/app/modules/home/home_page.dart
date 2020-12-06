@@ -18,6 +18,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   Widget build(BuildContext context) {
     var songFont = GoogleFonts.notoSans(fontSize: 15);
     var artistFont = GoogleFonts.notoSans(fontSize: 10);
+    var imageAlbum =
+        'https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png';
     return Scaffold(
       appBar: AppBar(
         title: Text('Agetzzue Music'),
@@ -25,14 +27,12 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       ),
       backgroundColor: Colors.black,
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: 50,
         itemBuilder: (context, int index) {
           return ListTile(
-              onTap: () => Modular.to.pushNamed('/player',
-                  arguments:
-                      'https://i.pinimg.com/originals/35/53/4e/35534e860468af2f2c9a75c072290471.jpg'),
-              leading: Image.network(
-                  'https://i.pinimg.com/originals/35/53/4e/35534e860468af2f2c9a75c072290471.jpg'),
+              onTap: () =>
+                  Modular.to.pushNamed('/player', arguments: imageAlbum),
+              leading: Image.network(imageAlbum),
               title: Text(
                 'Ninguém sabe qual é essa música!',
                 style: songFont,
@@ -41,7 +41,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 'Ninguém sabe qual é a banda também!',
                 style: artistFont,
               ),
-              contentPadding: EdgeInsets.all(10));
+              contentPadding: EdgeInsets.all(0));
         },
       ),
     );
